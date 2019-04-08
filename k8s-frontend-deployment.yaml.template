@@ -1,4 +1,4 @@
-apiVersion: v1
+yeapiVersion: v1
 kind: Service
 metadata:
   name: ora-se-symposium-frontend-service
