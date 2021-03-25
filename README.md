@@ -11,3 +11,5 @@ https://github.com/vamsiramakrishnan/ora-se-symposium-backend/blob/master/README
 3. Object Storage URL ( Used to render Stored images in newsfeed )
 4. Object Storage Read URL ( Used to post images )
 
+##Updating Readme to test the build trigger and image push to OCIR
+
