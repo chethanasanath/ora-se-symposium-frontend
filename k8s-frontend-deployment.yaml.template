@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: ora-se-symposium-frontend-service
   labels:
-    app: $APP_NAME
+    app: $APP_NAME_K8S_DEPLOY
 spec:
   type: LoadBalancer
   ports:
@@ -11,9 +11,9 @@ spec:
     protocol: TCP
     targetPort: 5000
   selector:
-    app: $APP_NAME
+    app: $APP_NAME_K8S_DEPLOY
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ora-se-symposium-frontend-service
@@ -22,14 +22,14 @@ spec:
   template:
     metadata:
       labels:
-        app: $APP_NAME
+        app: $APP_NAME_K8S_DEPLOY
 
     spec:
       imagePullSecrets:
       - name: $OCIR_SECRET_NAME
       containers:
       - name: $APP_NAME
-        image: $PRIVATE_REGISTRY_PATH/$TENANCY_NAME/$REPO_NAME/$APP_NAME:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+        image: $PRIVATE_REGISTRY_PATH/$APP_NAME_K8S_DEPLOY:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
         ports:
         - containerPort: 5000
           protocol: TCP
