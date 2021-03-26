@@ -13,5 +13,4 @@ https://github.com/vamsiramakrishnan/ora-se-symposium-backend/blob/master/README
 
 ##Updating Readme to test the build trigger and image push to OCIR
 
-##Updating Readme again to test the build trigger and image push to OCIR 
 
